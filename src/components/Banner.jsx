@@ -26,19 +26,20 @@ const Banner = () => {
         <main className="flex flex-col   md:flex-row items-center justify-center max-w-6xl gap-10  p-6">
 
 
-    <div className="  w-[25vw]">
+
+    <div className="  ">
       <Image
         src={img}
         alt="Shafikul Islam"
         width={1000}
         // height={900}
         // layout="fill"
-        className=" drop-shadow-2xl shadow-slate-600 rounded-full "
+        className=" shadow-2xl shadow-slate-600 rounded-full "
       />
     </div>
 
 
-    <div className="w-[50vw] text-center md:text-left">
+    <div className=" text-center md:text-left">
       <h2 className="text-4xl font-bold text-gray-900 mb-2">
         Hello, I am{" "}
         <span className="text-brown-700">Shafikul Islam</span>
