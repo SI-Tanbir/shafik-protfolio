@@ -13,22 +13,51 @@ export default function ContactSection() {
           <MapPin className="text-primary" size={24} />
           <div>
             <p className="text-gray-400 text-sm">My Address</p>
-            <p className="text-lg font-semibold">Liza Street, New York</p>
+            <p className="text-lg font-semibold">Dhaka,Bangaldesh</p>
           </div>
         </div>
       </div>
 
       {/* Social Links */}
-      <div className="mt-8 flex justify-center gap-6">
-        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
-          <Github className="text-gray-400 hover:text-primary transition-colors" size={28} />
-        </a>
-        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
-          <Linkedin className="text-gray-400 hover:text-primary transition-colors" size={28} />
-        </a>
-        <a href="mailto:your-email@example.com">
-          <MailOpen className="text-gray-400 hover:text-primary transition-colors" size={28} />
-        </a>
+      <div className="mt-8 flex  justify-center gap-6">
+    
+
+       <a
+              className="btn btn-outline border text-white border-secondary"
+              href="https://github.com/SI-Tanbir"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Github
+                className="text-gray-400 hover:text-secondary transition-colors"
+                size={28}
+              />
+              Github
+            </a>
+            <a
+              className="btn btn-outline text-white border border-secondary"
+              href="https://www.linkedin.com/in/shafikul-islam-22a280316/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Linkedin
+                className="text-gray-400 hover:text-secondary transition-colors"
+                size={28}
+              />
+              Linkedin
+            </a>
+            <a
+              className="btn btn-outline text-white border border-secondary flex items-center gap-2 px-4 py-2"
+              href="mailto:shafiktanbir@gmail.com?subject=Hello%20Shafikul!&body=I%20would%20like%20to%20contact%20you."
+            >
+              <MailOpen
+                className="text-gray-400 hover:text-secondary transition-colors"
+                size={24}
+              />
+              Mail Me
+            </a>
+
+
       </div>
     </div>
   );
