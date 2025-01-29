@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-200 py-8">
+    <footer className="bg-white border-t border-gray-200 py-8 text-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between">
           {/* Profile Section */}
@@ -12,16 +12,16 @@ export default function Footer() {
             <Image
               src={img} // Replace with your image path
               alt="Shafikul Islam"
-              className="w-12 h-12 rounded-full"
+              className="w-14 h-14 shadow-2xl shadow-slate-950 rounded-full"
             />
-            <span className="text-lg font-semibold">Shafikul Islam</span>
+            <span className="text-2xl font-semibold">Shafikul Islam</span>
           </div>
 
           {/* Links Section */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-6 md:mt-0 text-center md:text-left">
             {/* Product Links */}
             <div>
-              <h3 className="text-gray-800 font-medium">PRODUCT</h3>
+              <h3 className="text-black font-extrabold font-medium">PRODUCT</h3>
               <ul className="mt-2 space-y-2 text-sm text-gray-600">
                 <li>Features</li>
                 <li>Integrations</li>
@@ -32,7 +32,7 @@ export default function Footer() {
 
             {/* Company Links */}
             <div>
-              <h3 className="text-gray-800 font-medium">COMPANY</h3>
+              <h3 className=" text-black font-extrabold ">COMPANY</h3>
               <ul className="mt-2 space-y-2 text-sm text-gray-600">
                 <li>Privacy</li>
                 <li>Terms of Service</li>
@@ -41,7 +41,7 @@ export default function Footer() {
 
             {/* Developer Links */}
             <div>
-              <h3 className="text-gray-800 font-medium">DEVELOPERS</h3>
+              <h3 className="text-black font-extrabold">DEVELOPERS</h3>
               <ul className="mt-2 space-y-2 text-sm text-gray-600">
                 <li>Public API</li>
                 <li>Documentation</li>
@@ -51,7 +51,7 @@ export default function Footer() {
 
             {/* Social Media Links */}
             <div>
-              <h3 className="text-gray-800 font-medium">SOCIAL MEDIA</h3>
+              <h3 className="text-black font-extrabold">SOCIAL MEDIA</h3>
               <div className="flex space-x-4 mt-2">
                 <Github className="h-5 w-5 text-gray-800" />
                 <Linkedin className="h-5 w-5 text-blue-800" />

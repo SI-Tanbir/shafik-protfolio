@@ -15,6 +15,10 @@ export default {
   },
   plugins: [
     require('daisyui'),
-
   ],
+  daisyui: {
+    darkTheme: false, // This disables DaisyUI's automatic dark mode switching
+  },
+  
+  
 };
