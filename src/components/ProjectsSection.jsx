@@ -2,41 +2,39 @@
 export default function ProjectsSection() {
     const projects = [
       {
-        title: "Survey Sense",
+        title: "Innovative Mechinary MVP Built with MERN Stack and Next.js",
         description:
           "Explore Survey Sense and revolutionize how you gather feedback and insights. Our platform offers a unique blend of creativity and customization, making it easy to engage with your audience and gain actionable insights.",
-        techs: ["HTML", "CSS", "JavaScript", "React", "Node.js", "MongoDB"],
-        image: "/survey-sense.png", // Replace with actual image path
-        liveLink: "#",
+        techs: ["HTML", "CSS","Tailwind", "JavaScript", "React","Next Js",],
+        image: "/project-image/1.png", // Replace with actual image path
+        liveLink: "https://machinery-websites.vercel.app",
         codeLink: "#",
       },
       {
-        title: "Food Sharing",
-        description:
-          "Dive into the world of Food Sharing, the platform that brings communities together through the joy of sharing food. Explore recipes, share your food experiences, and help reduce food waste.",
-        techs: ["HTML", "CSS", "JavaScript", "React", "Express", "MongoDB"],
-        image: "/food-sharing.png", // Replace with actual image path
-        liveLink: "#",
-        codeLink: "#",
+        title: "BD AutoFix",
+        description: "BD AutoFix is an innovative online garage that leverages cutting-edge technology to provide seamless and efficient vehicle repair solutions for customers.",
+        techs: ["HTML", "CSS","Tailwind", "JavaScript", "React","Next Js","Mongo-DB"],
+        image: "/project-image/2.png", // Replace with actual 
+        liveLink: "https://bd-autofix.vercel.app/",
+        codeLink: "https://github.com/SI-Tanbir/BD-AutoFix",
       },
 
       {
-        title: "Food Sharing",
-        description:
-          "Dive into the world of Food Sharing, the platform that brings communities together through the joy of sharing food. Explore recipes, share your food experiences, and help reduce food waste.",
-        techs: ["HTML", "CSS", "JavaScript", "React", "Express", "MongoDB"],
-        image: "/food-sharing.png", // Replace with actual image path
-        liveLink: "#",
-        codeLink: "#",
+        title: "Professional Projects AssetFlow – Asset Management System ",
+        description:  "User Authentication & Authorization: Implemented secure login for employees and HR managers with role-based access control; Asset Inventory Management: Enabled HR managers to add, update, and delete assets with advanced search, filter, and sort capabilities; Employee Asset Requests: Allowed employees to submit asset requests, track status, and receive real-time notifications.",
+
+            techs: ["HTML", "CSS","Tailwind", "JavaScript", "React","Next",],
+            image: "/project-image/3.png", // Replace with actual 
+            liveLink: "https://assetflow-client.vercel.app/",
+        codeLink: "https://github.com/SI-Tanbir/AssetFlow-client",
       },
       {
-        title: "Food Sharing",
-        description:
-          "Dive into the world of Food Sharing, the platform that brings communities together through the joy of sharing food. Explore recipes, share your food experiences, and help reduce food waste.",
+        title: "FurryFables ",
+        description: "Developed an engaging and user-friendly e-commerce website dedicated to animal-themed toys, dolls for girls",
         techs: ["HTML", "CSS", "JavaScript", "React", "Express", "MongoDB"],
-        image: "/food-sharing.png", // Replace with actual image path
-        liveLink: "#",
-        codeLink: "#",
+        image: "/project-image/4.png", // Replace with actual 
+        liveLink: "https://furryfables-ada15.web.app/",
+        codeLink: "https://github.com/SI-Tanbir/furryfables-client",
       }
     ];
   

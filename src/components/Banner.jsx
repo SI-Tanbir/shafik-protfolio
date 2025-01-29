@@ -16,6 +16,7 @@ import icon8 from "../../public/icons/HTML5_logo_and_wordmark.svg.png";
 import icon9 from "../../public/icons/images.png";
 import icon10 from "../../public/icons/Javascript-shield.svg.png";
 import dynamic from "next/dynamic";
+import { Download } from "lucide-react";
 
 const Banner = () => {
   const Typewriter = dynamic(() => import("react-typewriter-effect"), { ssr: false });
@@ -53,9 +54,16 @@ const Banner = () => {
             understanding of back-end technologies like Node.js and Express.
           </p>
           <div className="flex justify-center md:justify-start space-x-4">
-            <button className="px-6 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700">
-              Download CV
-            </button>
+          
+
+            <a
+          href="/Shafikul_Islam_10.pdf"  
+          download="/Shafikul_Islam_10.pdf"
+          className="bg-primary hover:bg-primary-focus text-white font-semibold py-3 px-6 rounded-lg flex items-center gap-2 transition-all"
+        >
+          <Download size={20} /> Download CV
+        </a>
+            
             <button className="px-6 py-2 border border-red-500 text-red-500 rounded-lg hover:bg-red-500 hover:text-white">
               Learn More
             </button>
