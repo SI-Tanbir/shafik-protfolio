@@ -19,7 +19,7 @@ export default function ContactSection() {
       </div>
 
       {/* Social Links */}
-      <div className="mt-8 flex  justify-center gap-6">
+      <div className="mt-8 flex flex-wrap justify-center gap-6">
     
 
        <a

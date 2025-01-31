@@ -12,7 +12,7 @@ export default function Adpage() {
           </h2>
   
           {/* Feature List */}
-          <div className="flex justify-center space-x-6 text-gray-600 mb-8">
+          <div className="flex flex-wrap justify-center space-x-6 text-gray-600 mb-8">
             <span>Responsive Design</span>
             <span>•</span>
             <span>Fast Performance</span>
