@@ -62,7 +62,7 @@ export default function Footer() {
 
         {/* Footer Bottom */}
         <div className="mt-8 text-center text-sm text-gray-500">
-          © 1968 Company Co. All rights reserved.
+          © 2025 Company Co. All rights reserved.
         </div>
       </div>
     </footer>
