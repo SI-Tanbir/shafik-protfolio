@@ -59,9 +59,10 @@ const Banner = () => {
           </p>
           <div className="flex justify-center md:justify-start space-x-4">
             <a
-              href="/Shafikul_Islam_10.pdf"
-              download="/Shafikul_Islam_10.pdf"
+              href="/Shafikul_Islam_12.pdf"
+              download="Shafikul_Islam_12.pdf"
               className="bg-primary hover:bg-primary-focus text-white font-semibold py-3 px-6 rounded-lg flex items-center gap-2 transition-all"
+              
             >
               <Download size={20} /> Download CV
             </a>
