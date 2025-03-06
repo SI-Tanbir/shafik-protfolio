@@ -17,7 +17,7 @@ const Navbar = () => {
     tl.from(headRef.current, {
       y: -100,
       opacity: 0,
-      duration: 1,
+      duration: 0.4,
       scale: 1,
     });
 
@@ -25,8 +25,8 @@ const Navbar = () => {
     tl.from(headRef.current.querySelectorAll(".HeaderContent"), {
       x: -300,
       opacity: 0,
-      duration: 0.6,
-      stagger: 0.4,
+      duration: 0.4,
+      stagger: 0.2,
       ease: "bounce.in",
     });
 
@@ -52,7 +52,7 @@ const Navbar = () => {
 
   return (
     <div ref={headRef} className="container w-full">
-      <div className="navbar bg-base-100 text-black flex justify-between items-center p-4">
+      <div className="navbar bg-base-100 text-black flex justify-between items-center ">
         {/* left side */}
         <div className="flex items-center gap-4 HeaderContent">
           <div

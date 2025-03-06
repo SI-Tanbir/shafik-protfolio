@@ -1,11 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Download } from "lucide-react";
 
 // Import Typewriter from react-simple-typewriter
-import { Typewriter } from 'react-simple-typewriter';
+import { Typewriter } from "react-simple-typewriter";
 
 import img from "../../public/img/1.png";
 import icon1 from "../../public/icons/1175110.webp";
@@ -18,30 +18,58 @@ import icon7 from "../../public/icons/free-github-169-1174970.webp";
 import icon8 from "../../public/icons/HTML5_logo_and_wordmark.svg.png";
 import icon9 from "../../public/icons/images.png";
 import icon10 from "../../public/icons/Javascript-shield.svg.png";
+import gsap from "gsap";
 
 const Banner = () => {
+  let imageBanner = useRef(null);
+  let bannerContent = useRef(null);
+
+  useEffect(() => {
+    gsap.from(imageBanner.current, {
+      delay: 1,
+      x: -300,
+      opacity: 0,
+      ease: "bounce.out",
+      duration: 0.4,
+    });
+
+    gsap.from(bannerContent.current, {
+      delay: 1,
+      x: 300,
+      opacity: 0,
+      ease: "bounce.out",
+      duration: 0.4,
+    });
+  }, []);
+
   return (
-    <div className="bg-slate-100 pt-20">
-      <main className="flex flex-col md:flex-row items-center justify-center max-w-6xl gap-16 p-20">
+    <div className="bg-slate-100 md:pt-20">
+      <main className="flex flex-col md:flex-row items-center justify-center  gap-16 md:p-10">
         {/* Profile Image */}
-        <div>
+        <div
+          ref={imageBanner}
+          className="md:w-[40%] w-full flex justify-center"
+        >
           <Image
             src={img}
             alt="Shafikul Islam"
             width={300}
             height={300}
-            className="shadow-2xl w-[800px] h-[250px] shadow-slate-600 rounded-full object-cover"
+            className="shadow-2xl w-[350px] h-[350px] shadow-slate-600  rounded-full  object-cover"
           />
         </div>
 
         {/* Text Section with Typewriter Effect */}
-        <div className="text-center md:text-left">
+        <div
+          ref={bannerContent}
+          className="text-center md:text-left md:w-[60%] "
+        >
           <h2 className="text-4xl font-bold text-gray-950 mb-2">
             <Typewriter
-              words={['Hello, I am Shafikul Islam']}
+              words={["Hello, I am Shafikul Islam"]}
               loop={true}
               cursor
-              cursorStyle='|'
+              cursorStyle="|"
               typeSpeed={100}
               deleteSpeed={50}
               delaySpeed={1000}
@@ -49,20 +77,16 @@ const Banner = () => {
           </h2>
 
           <p className="text-gray-800 text-xl mb-6">
-            
-          A passionate Junior Web Developer eager to
-            contribute to cutting-edge web projects. Proficient in front-end
-            development using
-          HTML, CSS, JavaScript, and React, with a solid
-            understanding of back-end technologies like Node.js and Express.
-            
+            A passionate Junior Web Developer eager to contribute to
+            cutting-edge web projects. Proficient in front-end development using
+            HTML, CSS, JavaScript, and React, with a solid understanding of
+            back-end technologies like Node.js and Express.
           </p>
           <div className="flex justify-center md:justify-start space-x-4">
             <a
               href="/Shafikul_Islam_12.pdf"
               download="Shafikul_Islam_12.pdf"
               className="bg-primary hover:bg-primary-focus text-white font-semibold py-3 px-6 rounded-lg flex items-center gap-2 transition-all"
-              
             >
               <Download size={20} /> Download CV
             </a>
@@ -77,14 +101,29 @@ const Banner = () => {
       <div className="mt-20 p-10">
         <h4 className="text-5xl text-black mb-10">Fully compatible with:</h4>
         <div className="flex justify-evenly flex-wrap gap-4">
-          {[icon1, icon2, icon3, icon4, icon5, icon6, icon7, icon8, icon9, icon10].map((icon, index) => (
-            <Image key={index} width={100} height={100} src={icon} alt="icons" className="w-16 h-16" />
+          {[
+            icon1,
+            icon2,
+            icon3,
+            icon4,
+            icon5,
+            icon6,
+            icon7,
+            icon8,
+            icon9,
+            icon10,
+          ].map((icon, index) => (
+            <Image
+              key={index}
+              width={100}
+              height={100}
+              src={icon}
+              alt="icons"
+              className="w-16 h-16"
+            />
           ))}
         </div>
       </div>
-
-
-      
     </div>
   );
 };
