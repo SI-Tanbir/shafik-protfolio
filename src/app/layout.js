@@ -25,13 +25,10 @@ export default function RootLayout({ children }) {
         className={` ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div className="container m-auto ">
-          
-        <Navbar></Navbar>
-        {children}
-        <Footer></Footer>
-
+          <Navbar></Navbar>
+          {children}
+          <Footer></Footer>
         </div>
-      
       </body>
     </html>
   );

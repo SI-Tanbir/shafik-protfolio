@@ -7,21 +7,16 @@ import Image from "next/image";
 
 export default function Home() {
   return (
+    <div>
+      <Banner></Banner>
 
+      <ResponsiveSection></ResponsiveSection>
 
-   <div >
+      <Adpage></Adpage>
 
-   <Banner></Banner>
+      <ProjectsSection></ProjectsSection>
 
-    <ResponsiveSection></ResponsiveSection>
-
-   <Adpage></Adpage>
-   
-   <ProjectsSection></ProjectsSection>
-  
-    <ContactSection></ContactSection>
-
-   </div>
-
+      <ContactSection></ContactSection>
+    </div>
   );
 }
