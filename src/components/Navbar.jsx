@@ -22,29 +22,25 @@ const Navbar = () => {
     });
 
     // Animate all elements with the class 'HeaderContent'
-    tl.from(
-      headRef.current.querySelectorAll(".HeaderContent"),
-      {
-        y: -40,
-        opacity: 0,
-        duration: 0.6,
-        stagger: 0.4,
-        ease: "bounce.out",
-      },
-      1
-    );
+    tl.from(headRef.current.querySelectorAll(".HeaderContent"), {
+      x: -300,
+      opacity: 0,
+      duration: 0.6,
+      stagger: 0.4,
+      ease: "bounce.in",
+    });
 
-    tl.from(
-      headRef.current.querySelectorAll(".HeaderContentReverse"),
-      {
-        y: -40,
-        opacity: 0,
-        duration: 0.6,
-        stagger: -0.4,
-        ease: "bounce.out",
-      },
-      1
-    );
+    // tl.from(
+    //   headRef.current.querySelectorAll(".HeaderContent"),
+    //   {
+    //     y: -40,
+    //     opacity: 0,
+    //     duration: 0.6,
+    //     stagger: -0.4,
+    //     ease: "bounce.out",
+    //   },
+    //   1
+    // );
 
     // Animate the button separately, targetting the button explicitly
     // tl.from(headRef.current.querySelector("button"), {
@@ -90,7 +86,7 @@ const Navbar = () => {
           }`}
         >
           <ul className="menu menu-vertical lg:menu-horizontal w-full lg:w-auto gap-4">
-            <li className="HeaderContentReverse">
+            <li className="HeaderContent">
               <a
                 className="btn btn-outline border border-secondary "
                 href="https://github.com/SI-Tanbir"
@@ -104,7 +100,7 @@ const Navbar = () => {
                 Github
               </a>
             </li>
-            <li className="HeaderContentReverse">
+            <li className="HeaderContent">
               <a
                 className="btn btn-outline border border-secondary"
                 href="https://www.linkedin.com/in/shafikul-islam-22a280316/"
@@ -118,7 +114,7 @@ const Navbar = () => {
                 Linkedin
               </a>
             </li>
-            <li className="HeaderContentReverse">
+            <li className="HeaderContent">
               <a
                 className="btn btn-outline border border-secondary flex items-center gap-2 px-4 py-2"
                 href="mailto:shafiktanbir@gmail.com?subject=Hello%20Shafikul!&body=I%20would%20like%20to%20contact%20you."
@@ -130,7 +126,7 @@ const Navbar = () => {
                 Mail Me
               </a>
             </li>
-            <li className="HeaderContentReverse">
+            <li className="HeaderContent">
               <a href="#contract" className="btn btn-outline btn-secondary">
                 Hire me
               </a>
