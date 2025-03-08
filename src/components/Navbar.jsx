@@ -14,12 +14,12 @@ const Navbar = () => {
     let tl = gsap.timeline();
 
     // Animate the whole container first
-    tl.from(headRef.current, {
-      y: -100,
-      opacity: 0,
-      duration: 0.4,
-      scale: 1,
-    });
+    // tl.from(headRef.current, {
+    //   y: -100,
+    //   opacity: 0,
+    //   duration: 0.4,
+    //   scale: 1,
+    // });
 
     // Animate all elements with the class 'HeaderContent'
     tl.from(headRef.current.querySelectorAll(".HeaderContent"), {

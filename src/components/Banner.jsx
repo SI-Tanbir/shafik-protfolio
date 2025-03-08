@@ -1,11 +1,10 @@
 "use client";
-
-import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import { Download } from "lucide-react";
-
-// Import Typewriter from react-simple-typewriter
 import { Typewriter } from "react-simple-typewriter";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 import img from "../../public/img/1.png";
 import icon1 from "../../public/icons/1175110.webp";
@@ -18,13 +17,16 @@ import icon7 from "../../public/icons/free-github-169-1174970.webp";
 import icon8 from "../../public/icons/HTML5_logo_and_wordmark.svg.png";
 import icon9 from "../../public/icons/images.png";
 import icon10 from "../../public/icons/Javascript-shield.svg.png";
-import gsap from "gsap";
 
 const Banner = () => {
   let imageBanner = useRef(null);
   let bannerContent = useRef(null);
+  let skillimg = useRef(null);
 
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Image and content animation
     gsap.from(imageBanner.current, {
       delay: 1,
       x: -300,
@@ -40,11 +42,35 @@ const Banner = () => {
       ease: "bounce.out",
       duration: 0.4,
     });
+
+    // Scroll-trigger animation for each individual skill image with staggered effect
+    const images = skillimg.current.children; // Get each image inside the container
+    gsap.from(images, {
+      opacity: 0,
+      x: 30,
+      duration: 0.6,
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: skillimg.current, // Trigger the entire container (but animations apply to each image)
+        start: "top 80%",
+        end: "top 10%",
+        // markers: true, // For debugging, remove it when you're satisfied
+        scrub: true, // Smooth animation while scrolling
+        onLeave: () => {
+          gsap.to(images, { opacity: 0, x: 30, duration: 0.6 }); // Hide images when the scroll ends
+        },
+        onEnterBack: () => {
+          gsap.to(images, { opacity: 1, x: 0, duration: 0.6 }); // Show images again when scrolling back
+        },
+      },
+    });
+
+    // adding code for skill
   }, []);
 
   return (
     <div className="bg-slate-100 md:pt-20">
-      <main className="flex flex-col md:flex-row items-center justify-center  gap-16 md:p-10">
+      <main className="flex flex-col md:flex-row items-center justify-center gap-16 md:p-10">
         {/* Profile Image */}
         <div
           ref={imageBanner}
@@ -55,14 +81,14 @@ const Banner = () => {
             alt="Shafikul Islam"
             width={300}
             height={300}
-            className="shadow-2xl w-[350px] h-[350px] shadow-slate-600  rounded-full  object-cover"
+            className="shadow-2xl w-[350px] h-[350px] shadow-slate-600 rounded-full object-cover"
           />
         </div>
 
         {/* Text Section with Typewriter Effect */}
         <div
           ref={bannerContent}
-          className="text-center md:text-left md:w-[60%] "
+          className="text-center md:text-left md:w-[60%]"
         >
           <h2 className="text-4xl font-bold text-gray-950 mb-2">
             <Typewriter
@@ -79,8 +105,7 @@ const Banner = () => {
           <p className="text-gray-800 text-xl mb-6">
             A passionate Junior Web Developer eager to contribute to
             cutting-edge web projects. Proficient in front-end development using
-            HTML, CSS, JavaScript, and React, with a solid understanding of
-            back-end technologies like Node.js and Express.
+            HTML, CSS, JavaScript, and React.
           </p>
           <div className="flex justify-center md:justify-start space-x-4">
             <a
@@ -100,7 +125,7 @@ const Banner = () => {
       {/* Icons Section */}
       <div className="mt-20 p-10">
         <h4 className="text-5xl text-black mb-10">Fully compatible with:</h4>
-        <div className="flex justify-evenly flex-wrap gap-4">
+        <div ref={skillimg} className="flex justify-evenly flex-wrap gap-4">
           {[
             icon1,
             icon2,
