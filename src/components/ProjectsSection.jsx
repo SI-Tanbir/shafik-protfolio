@@ -58,11 +58,12 @@ export default function ProjectsSection() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
+    // setting up timeline for project setion line 1
     let tl = gsap.timeline({
       scrollTrigger: {
         trigger: projectSection.current,
         scroller: "body",
-        markers: true,
+        // markers: true,
         start: "top 50%",
         end: "top 0%",
         scrub: 2,
@@ -101,7 +102,7 @@ export default function ProjectsSection() {
       scrollTrigger: {
         trigger: p2,
         scroller: "body",
-        markers: true,
+        // markers: true,
         start: "top 80%",
         end: "top 0%",
         scrub: 2,
@@ -127,40 +128,6 @@ export default function ProjectsSection() {
       },
       "line2"
     );
-
-    // gsap.from(firstRowProjects, {
-    //   opacity: 0,
-    //   x: -200,
-    //   duration: 1,
-    //   stagger: 0.3,
-    //   scrollTrigger: {
-    //     trigger: projectSection.current,
-    //     scroller: "body",
-    //     start: "top 50%",
-    //     end: "top 20%",
-    //     scrub: 1,
-    //     markers: true,
-    //   },
-    // });
-
-    // Second row animation (right to left)
-    // const secondRowProjects =
-    //   projectSection.current.querySelectorAll(".second-row");
-
-    // gsap.from(secondRowProjects, {
-    //   opacity: 0,
-    //   x: 200,
-    //   duration: 1,
-    //   stagger: 0.3,
-    //   scrollTrigger: {
-    //     trigger: projectSection.current,
-    //     scroller: "body",
-    //     start: "top 50%",
-    //     end: "top 20%",
-    //     scrub: 1,
-    //     markers: true,
-    //   },
-    // });
   }, []);
 
   return (
