@@ -58,19 +58,17 @@ export default function ProjectsSection() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    // setting up timeline for project setion line 1
+    // setting up timeline for project section line 1
     let tl = gsap.timeline({
       scrollTrigger: {
         trigger: projectSection.current,
-        scroller: "body",
-        // markers: true,
-        start: "top 50%",
-        end: "top 0%",
-        scrub: 2,
+        start: "top 80%",
+        end: "bottom 20%",
+        toggleActions: "play none none reverse",
       },
     });
 
-    //seting the prject class
+    //setting the project class
     const p0 = projectSection.current.querySelectorAll(".project0");
     const p1 = projectSection.current.querySelectorAll(".project1");
     const p2 = projectSection.current.querySelectorAll(".project2");
@@ -81,8 +79,9 @@ export default function ProjectsSection() {
       p0,
       {
         opacity: 0,
-        x: -200,
-        duration: 0.5,
+        x: -100,
+        duration: 0.8,
+        ease: "power2.out"
       },
       "line1"
     );
@@ -91,21 +90,20 @@ export default function ProjectsSection() {
       p1,
       {
         opacity: 0,
-        x: 200,
-        duration: 0.5,
+        x: 100,
+        duration: 0.8,
+        ease: "power2.out"
       },
       "line1"
     );
 
-    // setting another timeline for scond line
+    // setting another timeline for second line
     let tl1 = gsap.timeline({
       scrollTrigger: {
         trigger: p2,
-        scroller: "body",
-        // markers: true,
         start: "top 80%",
-        end: "top 0%",
-        scrub: 2,
+        end: "bottom 20%",
+        toggleActions: "play none none reverse",
       },
     });
 
@@ -113,8 +111,9 @@ export default function ProjectsSection() {
       p2,
       {
         opacity: 0,
-        x: -200,
-        duration: 0.5,
+        x: -100,
+        duration: 0.8,
+        ease: "power2.out"
       },
       "line2"
     );
@@ -123,15 +122,21 @@ export default function ProjectsSection() {
       p3,
       {
         opacity: 0,
-        x: 200,
-        duration: 0.5,
+        x: 100,
+        duration: 0.8,
+        ease: "power2.out"
       },
       "line2"
     );
+
+    // Cleanup function
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
   }, []);
 
   return (
-    <section ref={projectSection} className="bg-gray-50 py-12">
+    <section ref={projectSection} className="bg-gray-50 py-12 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
         {/* Title */}
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-6">
