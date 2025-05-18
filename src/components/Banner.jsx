@@ -7,21 +7,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 
 import img from "../../public/img/1.png";
-import icon1 from "../../public/icons/1175110.webp";
-import icon2 from "../../public/icons/1689418463906.png";
-import icon3 from "../../public/icons/1_doAg1_fMQKWFoub-6gwUiQ.png";
-import icon4 from "../../public/icons/featured.png";
-import icon5 from "../../public/icons/file-2.png";
-import icon6 from "../../public/icons/file.png";
-import icon7 from "../../public/icons/free-github-169-1174970.webp";
-import icon8 from "../../public/icons/HTML5_logo_and_wordmark.svg.png";
-import icon9 from "../../public/icons/images.png";
-import icon10 from "../../public/icons/Javascript-shield.svg.png";
 
 const Banner = () => {
   let imageBanner = useRef(null);
   let bannerContent = useRef(null);
-  let skillimg = useRef(null);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -43,29 +32,10 @@ const Banner = () => {
       duration: 0.4,
     });
 
-    // Scroll-trigger animation for each individual skill image with staggered effect
-    const images = skillimg.current.children; // Get each image inside the container
-    gsap.from(images, {
-      opacity: 0,
-      x: 30,
-      duration: 0.6,
-      stagger: 0.3,
-      scrollTrigger: {
-        trigger: skillimg.current, // Trigger the entire container (but animations apply to each image)
-        start: "top 80%",
-        end: "top 10%",
-        // markers: true, // For debugging, remove it when you're satisfied
-        scrub: true, // Smooth animation while scrolling
-        onLeave: () => {
-          gsap.to(images, { opacity: 0, x: 30, duration: 0.6 }); // Hide images when the scroll ends
-        },
-        onEnterBack: () => {
-          gsap.to(images, { opacity: 1, x: 0, duration: 0.6 }); // Show images again when scrolling back
-        },
-      },
-    });
-
-    // adding code for skill
+    // Cleanup function
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
   }, []);
 
   return (
@@ -121,34 +91,6 @@ const Banner = () => {
           </div>
         </div>
       </main>
-
-      {/* Icons Section */}
-      {/* <div className="mt-20 p-10">
-        <h4 className="text-5xl text-black mb-10">Fully compatible with:</h4>
-        <div ref={skillimg} className="flex justify-evenly flex-wrap gap-4">
-          {[
-            icon1,
-            icon2,
-            icon3,
-            icon4,
-            icon5,
-            icon6,
-            icon7,
-            icon8,
-            icon9,
-            icon10,
-          ].map((icon, index) => (
-            <Image
-              key={index}
-              width={100}
-              height={100}
-              src={icon}
-              alt="icons"
-              className="w-16 h-16"
-            />
-          ))}
-        </div>
-      </div> */}
     </div>
   );
 };
