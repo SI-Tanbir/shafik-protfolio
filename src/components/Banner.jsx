@@ -123,7 +123,7 @@ const Banner = () => {
       </main>
 
       {/* Icons Section */}
-      <div className="mt-20 p-10">
+      {/* <div className="mt-20 p-10">
         <h4 className="text-5xl text-black mb-10">Fully compatible with:</h4>
         <div ref={skillimg} className="flex justify-evenly flex-wrap gap-4">
           {[
@@ -148,7 +148,7 @@ const Banner = () => {
             />
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
